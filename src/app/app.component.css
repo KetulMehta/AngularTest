@@ -1,0 +1,31 @@
+ .PropertyDetails {
+    text-align: left; 
+    position: absolute;
+    width: 30%;
+}
+
+.PropertyRent{
+    text-align: right;  
+    padding-left: 50%;
+
+}
+.Details{
+  width: 100%;
+  position: relative;
+}
+
+#main .openhouseclass{
+    text-align: center; 
+    align-content: center;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    background-color: grey;
+  }
+
+agm-map {
+    height: 400px;
+    width:400px;
+  }

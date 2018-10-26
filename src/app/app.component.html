@@ -1,0 +1,36 @@
+<!--The content below" is only a placeolder and can be replaced.--> 
+  <div *ngIf= "arrList"> 
+    <div *ngFor = "let lists of arrList" id="main">
+
+      <div class="Details">
+          <div class="PropertyDetails">
+               {{lists.Property.Address.StreetNumber}}&nbsp;{{lists.Property.Address.StreetName}}
+          </div>
+          <div class="PropertyRent">
+                <div *ngIf= "lists.Listing.Transaction === 'Rent'">
+                  {{lists.Listing.Price | currency : "$" }} per month
+                </div>
+                <div *ngIf= "lists.Listing.Transaction !== 'Rent'">
+                    {{lists.Listing.Price | currency : "$" }}
+                </div>
+          </div>        
+        </div>
+        Transaction : {{lists.Listing.Transaction}}
+        <div *ngFor = "let openhouse of lists.Listing.OpenHouses" class="openhouseclass"> 
+          <div *ngIf="fullDateFunction(openhouse.Date)">
+          {{dateFunction(openhouse.Date)}} - {{tConvert(openhouse.StartTime)}} to {{tConvert(openhouse.EndTime)}}
+        </div>
+        </div><br/>
+    </div>
+    
+        <agm-map [latitude]="lat" [longitude]="lng">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map><br/>
+           
+        <agm-map [latitude]="latitude_count" [longitude]="longitude_count">
+          <agm-marker [latitude]="latitude_count" [longitude]="longitude_count"></agm-marker>
+      </agm-map>
+
+  </div>
+
+
